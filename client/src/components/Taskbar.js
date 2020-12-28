@@ -10,7 +10,8 @@ const useStyles = makeStyles({
   },
 });
 
-export default function CenteredTabs() {
+export default function Taskbar(props) {
+  const items = props.items;
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -27,9 +28,12 @@ export default function CenteredTabs() {
         textColor="primary"
         centered
       >
-        <Tab label="Item One" />
-        <Tab label="Item Two" />
-        <Tab label="Item Three" />
+        <Tab label={items.task} />
+        <Tab label={items.person} />
+        <Tab label={items.status} />
+        <Tab label={items.dueDate} />
+        <Tab label={items.estimatedTime} />
+        <Tab label={items.timeTracking} />
       </Tabs>
     </Paper>
   );

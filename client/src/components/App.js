@@ -9,22 +9,26 @@ import LoginPage from "./views/LoginPage/LoginPage.js";
 import RegisterPage from "./views/RegisterPage/RegisterPage.js";
 import Taskbar from "./Taskbar.js";
 
-import NavBar from "./views/NavBar/NavBar";
-import Footer from "./views/Footer/Footer";
-
 //About User
 import NotFoundPage from "./views/NotFoundPage/NotFoundPage";
 
+const TaskItems = {
+  task: "Test task",
+  person: "Alex",
+  status: "Working",
+  dueDate: "Dec 333",
+  estimatedTime: "5 hours",
+  timeTracking: "4:59",
+};
 function App() {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <div className="wrapper">
-        <NavBar />
         <div className="contentsWrapSpacer" />
-        <Taskbar></Taskbar>
         <Switch>
           <div className="contentsWrap">
             <Route exact path="/" component={Auth(LandingPage, null)} />
+            <Taskbar items={TaskItems} />
             <Route exact path="/login" component={Auth(LoginPage, false)} />
             <Route
               exact
@@ -34,7 +38,6 @@ function App() {
           </div>
           <Route component={Auth(NotFoundPage, null)} />
         </Switch>
-        <Footer />
       </div>
     </Suspense>
   );
