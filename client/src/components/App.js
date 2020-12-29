@@ -10,7 +10,7 @@ import RegisterPage from "./views/RegisterPage/RegisterPage.js";
 
 import NavBar from "./views/NavBar/NavBar";
 import Footer from "./views/Footer/Footer";
-
+import ItemButtom from "./views/ItemButton/ItemButton"
 //About User
 import NotFoundPage from './views/NotFoundPage/NotFoundPage';
 
@@ -28,6 +28,7 @@ function App() {
           </div>
           <Route component={Auth(NotFoundPage, null)} />
         </Switch>
+        <ItemButtom/>
         <Footer />
       </div>
     </Suspense>
