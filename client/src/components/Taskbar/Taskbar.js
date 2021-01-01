@@ -9,12 +9,8 @@ const useStyles = makeStyles({
   },
 });
 
-const updateTaskbar = (param) => {
-  console.log("is it working", param);
-};
-
 export default function Taskbar(props) {
-  const task = props.task;
+  const { task, updateTask, id } = props;
   const classes = useStyles();
 
   return (
@@ -24,7 +20,7 @@ export default function Taskbar(props) {
           <Tab
             label={task.task}
             onClick={() => {
-              updateTaskbar("test");
+              updateTask("testtt", id);
             }}
           />
           <Tab label={task.person} />
@@ -37,3 +33,7 @@ export default function Taskbar(props) {
     </div>
   );
 }
+
+//Convert the task items to state. This will use immutable data patterns
+//Have a function in app.js that updates the state
+//Pass the function to taskbar which will run onclick for each item
