@@ -9,6 +9,7 @@ import AssignedTo from "./Task-Components/AssignedTo";
 import DueDate from "./Task-Components/DueDate";
 import Task from "./Task-Components/Task";
 import TimeEstimate from "./Task-Components/TimeEstimate";
+import TimeTracker from "./Task-Components/TimeTracker";
 const useStyles = makeStyles({
   root: {
     flexGrow: 1,
@@ -28,7 +29,7 @@ export default function Taskbar(props) {
           <Status status={task.status} />
           <DueDate />
           <TimeEstimate />
-          <Tab label={task.timeTracking} />
+          <TimeTracker />
         </Tabs>
       </Paper>
     </div>
