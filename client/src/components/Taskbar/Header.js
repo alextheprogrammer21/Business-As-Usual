@@ -19,7 +19,7 @@ export default function Header() {
       <Paper className={classes.root}>
         <Tabs indicatorColor="secondary" textColor="secondary" centered>
           <Tab label="" />
-          <Tab id="headerTitles" label="Name" />
+          <Tab id="headerTitles" label="Assigned-To" />
           <Tab id="headerTitles" label="Status" />
           <Tab id="headerTitles" label="Due Date" />
           <Tab id="headerTitles" label="Time Estimate" />

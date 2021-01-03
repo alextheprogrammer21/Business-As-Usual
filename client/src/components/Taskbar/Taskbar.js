@@ -3,6 +3,12 @@ import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
+import EditableLabel from "react-editable-label";
+import Status from "./Task-Components/Status";
+import AssignedTo from "./Task-Components/AssignedTo";
+import DueDate from "./Task-Components/DueDate";
+import Task from "./Task-Components/Task";
+import TimeEstimate from "./Task-Components/TimeEstimate";
 const useStyles = makeStyles({
   root: {
     flexGrow: 1,
@@ -10,23 +16,18 @@ const useStyles = makeStyles({
 });
 
 export default function Taskbar(props) {
-  const { task, updateTask, id } = props;
+  const { task, updateTask, updateTimeEstimate, updatePerson, id } = props;
   const classes = useStyles();
 
   return (
     <div>
+      <Task />
       <Paper className={classes.root}>
         <Tabs indicatorColor="primary" textColor="primary" centered>
-          <Tab
-            label={task.task}
-            onClick={() => {
-              updateTask("testtt", id);
-            }}
-          />
-          <Tab label={task.person} />
-          <Tab label={task.status} />
-          <Tab label={task.dueDate} />
-          <Tab label={task.estimatedTime} />
+          <AssignedTo />
+          <Status status={task.status} />
+          <DueDate />
+          <TimeEstimate />
           <Tab label={task.timeTracking} />
         </Tabs>
       </Paper>
