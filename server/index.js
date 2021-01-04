@@ -13,9 +13,7 @@ const app = express();
 mongoose
   .connect(config.mongoURI, {
     useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false,
-    useCreateIndex: true,
+    useUnifiedTopology: true
   })
   .then(() => console.log("MongoDB Connected..."))
   .catch((err) => console.error(err));
@@ -36,7 +34,8 @@ app.use(morgan("dev"));
 // CORS Middleware
 app.use(cors());
 
-app.use("/api/users", require("./routes/users"));
+app.use("/users", require("./routes/users"));
+//app.use("/", require("./routes/home"));
 
 //use this to show static files you have in node js server to client (react js)
 app.use("/uploads", express.static("uploads"));
@@ -58,3 +57,5 @@ const port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log(`Server Running at ${port}`);
 });
+
+module.exports = app;
