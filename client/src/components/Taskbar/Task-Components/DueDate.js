@@ -1,17 +1,33 @@
-import React, { useState } from "react";
-import Calendar from "react-calendar";
-import "react-calendar/dist/Calendar.css";
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import TextField from "@material-ui/core/TextField";
 
-export default function DueDate() {
-  const [value, onChange] = useState();
+const useStyles = makeStyles((theme) => ({
+  container: {
+    display: "flex",
+    flexWrap: "wrap",
+  },
+  textField: {
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1),
+    width: 200,
+  },
+}));
 
-  let newvalue = JSON.stringify(value);
-  console.log(newvalue);
+export default function DatePickers() {
+  const classes = useStyles();
+
   return (
-    <div>
-      <Calendar onChange={onChange} value={value} />
-
-      <h1>{newvalue}</h1>
-    </div>
+    <form className={classes.container} noValidate>
+      <TextField
+        id="date"
+        type="date"
+        defaultValue="2020-05-24"
+        className={classes.textField}
+        InputLabelProps={{
+          shrink: true,
+        }}
+      />
+    </form>
   );
 }
