@@ -38,10 +38,10 @@ export default function SimpleSelect() {
             {"Default"}
           </MenuItem>
           <MenuItem value={5}>None</MenuItem>
-          <MenuItem value={10}>Working</MenuItem>
-          <MenuItem value={20}>Stuck</MenuItem>
-          <MenuItem value={30}>Paused</MenuItem>
-          <MenuItem value={40}>Done</MenuItem>
+          <MenuItem value={10}>Joe</MenuItem>
+          <MenuItem value={20}>Alex</MenuItem>
+          <MenuItem value={30}>Umber</MenuItem>
+          <MenuItem value={40}>Andy</MenuItem>
         </Select>
       </FormControl>
     </div>
