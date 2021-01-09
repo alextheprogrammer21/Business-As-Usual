@@ -5,7 +5,7 @@ import {PlusCircleFilled} from '@ant-design/icons'
 function ItemButton(){
   return(
     <>
-    <Button type="primary"> Add Item <PlusCircleFilled/></Button>
+    <Button type="primary"> Add Item <PlusCircleFilled/> </Button>
     </>
   )
 }
